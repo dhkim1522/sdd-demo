@@ -38,7 +38,7 @@ public class Order extends AbstractAggregateRoot<Order> {
         order.price = price;
         order.status = OrderStatus.CREATED;
         order.createdAt = LocalDateTime.now();
-        order.registerEvent(new OrderCreatedEvent(productName, quantity, price));
+        order.registerEvent(new OrderCreatedEvent(order));
         return order;
     }
 
